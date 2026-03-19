@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Define your design system here */
+@theme {
+  --color-brand-cream: #f9f6f0;
+  --color-brand-green: #8fa082;
+  --color-brand-coral: #d46b53;
+  --color-brand-dark: #3d2b1f;
+  --color-brand-yellow: #e8c37d;
+
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Merriweather", serif;
+}
+
+/* Apply global base styles using your new variables */
+@layer base {
+  body {
+    background-color: var(--color-brand-cream);
+    color: var(--color-brand-dark);
+  }
+}
