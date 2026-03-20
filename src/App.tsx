@@ -7,7 +7,7 @@ import MiloChat from './components/section/MiloChat.tsx'
 import Review from './components/section/Review.tsx'
 const App = () => {
   return (
-    <div className='relative min-w-0 overflow-x-hidden'>
+    <div className='relative min-w-0 overflow-x-clip'>
       <div className='absolute top-0 left-0 w-full -z-10 min-w-0'>
         <svg
           className="block h-auto w-full min-w-0"
