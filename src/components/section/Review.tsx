@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import review from "../../assets/Frame 40.png"
+import { useState } from 'react'
 import { ArrowRight, ChevronUp, ChevronDown } from 'lucide-react'
 import yellowBg from "../../assets/yellowBg.svg"
 import stick from "../../assets/stick.png"
