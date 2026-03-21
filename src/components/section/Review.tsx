@@ -6,8 +6,19 @@ import stick from "../../assets/stick.png"
 import ingredients from "../../assets/ingridients.png"
 import stick1 from "../../assets/stick2.png"
 import saddog from "../../assets/saddog.svg"
-import happydog from "../../assets/happy.svg"
+import happydog from "../../assets/dogRemovebg.png"
 import round from "../../assets/round.png"
+import sickDog from "../../assets/sickDog.png"
+import energy from "../../assets/energydrop.svg"
+import poop from "../../assets/Group_13-removebg-preview.png"
+import gas from "../../assets/gas.svg"
+import arrow1 from "../../assets/Group (1).png"
+import arrow2 from "../../assets/Group (2).png"
+import arrow3 from "../../assets/Group.png"
+import goodBacteria from "../../assets/good_bacteria.svg"
+import balance from "../../assets/balance_digestion.svg"
+import happyGut from "../../assets/happy_healthy_dog.png"
+import arrowRight from "../../assets/arroowRIght.png"
 
 const faqData = [
     {
@@ -33,7 +44,7 @@ const faqData = [
 ];
 
 const Review = () => {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleFaq = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -50,17 +61,93 @@ const Review = () => {
             </div>
 
             <div className='mt-20 mb-20'>
-                <a
-                    href="#shop"
-                    className='mt-10 inline-flex flex-row items-center gap-x-2 rounded-[10px] bg-[#4F815E] px-5 py-3 font-[Talina] text-[26px] font-light leading-[100%] tracking-0% text-white no-underline'
-                >
+                <button className='flex flex-row gap-x-2 font-[Talina] bg-[#4F815E] text-[26px] mt-10 text-white px-5 py-3 rounded-[10px] leading-[100%] tracking-0% font-light cursor-pointer'>
                     Buy chewcheer
-                    <ArrowRight strokeWidth={2.5} aria-hidden />
-                </a>
+                    <ArrowRight strokeWidth={2.5} />
+                </button>
             </div>
-            <div className='font-[Talina] mt-10 max-w-[min(100%,22rem)] px-4 text-center text-[26px] leading-snug text-[#C97064] tracking-0% md:max-w-none md:px-0 md:text-[40px] md:leading-[100%]'>
+            <div className='font-[Talina] text-[40px] mt-10 text-[#C97064] leading-[100%] tracking-0% '>
                 Not all "good boys" have good guts.
             </div>
+            {/* Health reason */}
+            <div className="relative w-full bg-transparent h-screen mt-[-100px] mb-30">
+                <div className="flex justify-end items-center h-full flex-col">
+
+                    {/* Gas cloud - upper left */}
+                    <img src={gas} alt="" className='absolute top-[20%] left-[15%]' />
+
+                    {/* Energy battery - top center */}
+                    <img src={energy} alt="" className='absolute top-[10%] left-1/2 -translate-x-1/2' />
+
+                    {/* Poop - right side */}
+                    <img src={poop} alt="" className='absolute top-[38%] right-[15%]' />
+
+                    {/* Arrow from gas to dog (curves down-right) */}
+                    <img src={arrow3} alt="" className="absolute top-[48%] left-[30%] rotate-6" />
+
+                    {/* Arrow from energy down to dog */}
+                    <img src={arrow1} alt="" className="absolute top-[35%] left-1/2 -translate-x-1/2" />
+
+                    {/* Arrow from poop to dog (curves left) */}
+                    <img src={arrow2} alt="" className="absolute top-[50%] right-[32%]" />
+
+                    <div className=" w-[450px]">
+                        <img src={sickDog} alt="" />
+                    </div>
+                    <span className='font-[Talina] text-[24px] text-wrap text-center text-[#4F815E] leading-[100%] tracking-0%'>
+                        Most problems don't start where you see them.
+                    </span>
+                    <span className='font-[Talina] text-[24px] pt-2 text-wrap text-center text-[#4F815E] leading-[100%] tracking-0%'>
+                    They start in the gut. That's where prebiotics help.
+                    </span>
+                </div>
+            </div>
+
+            {/* Health benefits */}
+            <div className="border-5 bg-[#E5C68761] border-[#66261E] w-7xl h-fit rounded-[44px] px-10 py-10">
+                <div className='font-[Talina] text-[40px] mb-10 text-[#66261E] leading-[100%] tracking-0% text-center'>
+                    A Happier Gut In 3 Simple Steps
+                </div>
+
+                <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] items-start gap-4">
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="h-[250px] flex items-end justify-center mb-4">
+                            <img src={goodBacteria} alt="" className="max-h-full object-contain" />
+                        </div>
+                        <span className="font-[Talina] text-[24px] text-[#66261E] leading-tight mt-2">Feed Good Bacteria</span>
+                        <span className="font-[Spinnaker] text-[18px] text-[#C97064] mt-1 px-4">Feeds the good bacteria your dog actually needs.</span>
+                        <span className="font-[Talina] text-[28px] text-[#66261E] mt-6 w-10 h-10 flex items-center justify-center rounded-full border-3 border-[#66261E]">1</span>
+                    </div>
+
+                    <div className="flex items-center h-[250px]">
+                        <img src={arrowRight} alt="" />
+                    </div>
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="h-[250px] flex items-end justify-center mb-4">
+                            <img src={balance} alt="" className="max-h-full object-contain" />
+                        </div>
+                        <span className="font-[Talina] text-[24px] text-[#66261E] leading-tight mt-2">Balance Digestion</span>
+                        <span className="font-[Spinnaker] text-[18px] text-[#C97064] mt-1 px-4">Helps digestion do its job. No drama.</span>
+                        <span className="font-[Talina] text-[28px] text-[#66261E] mt-6 w-10 h-10 flex items-center justify-center rounded-full border-3 border-[#66261E]">2</span>
+                    </div>
+
+                    <div className="flex items-center h-[250px]">
+                        <img src={arrowRight} alt="" />
+                    </div>
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="h-[250px] flex items-end justify-center mb-4">
+                            <img src={happyGut} alt="" className="max-h-full object-contain" />
+                        </div>
+                        <span className="font-[Talina] text-[24px] text-[#66261E] leading-tight mt-2">Happier, Healthier Dogs.</span>
+                        <span className="font-[Spinnaker] text-[18px] text-[#C97064] mt-1 px-4">Less gas. Better poop. More zoomies.</span>
+                        <span className="font-[Talina] text-[28px] text-[#66261E] mt-6 w-10 h-10 flex items-center justify-center rounded-full border-3 border-[#66261E]">3</span>
+                    </div>
+                </div>
+            </div>
+            <div className="font-[Cookie] text-2xl mt-4 mb-30">It’s not magic. It’s just good gut health.</div>
 
             {/* Science section */}
             <div id="science" className='w-full min-w-0'>
@@ -79,29 +166,35 @@ const Review = () => {
             </div>
 
             {/* From tummy troubles to tail wags */}
-            <div className='w-full min-w-0 bg-[#F5F5F5] py-20 mt-20'>
-                <div className='max-w-5xl mx-auto px-6'>
+            <div className='w-screen relative left-1/2 -translate-x-1/2 bg-[#F5F5F5] py-20 mt-20 overflow-hidden'>
+                {/* Sad dog - positioned absolutely at the left edge */}
+                <div className='absolute left-30 top-1/2 -translate-y-1/2 w-[240px] h-[240px] flex items-center justify-center'>
+                    <img src={saddog} alt=""/>
+                </div>
+
+                {/* Happy dog - positioned absolutely at the right edge */}
+                <div className='absolute right-30 top-1/2 -translate-y-1/2 w-[240px] h-[240px] flex items-center justify-center'>
+                    <img src={happydog} alt="" />
+                </div>
+
+                <div className='max-w-3xl mx-auto px-6'>
                     {/* Title */}
-                    <h2 className='font-[Talina] text-center text-[26px] leading-snug tracking-wider text-[#C97064] md:text-[40px] md:leading-tight'>
+                    <h2 className='font-[Talina] text-[40px] text-[#C97064] text-center leading-tight tracking-wider'>
                         From tummy troubles to tail wags
                     </h2>
 
                     {/* Comparison Grid */}
-                    <div className='grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-6 items-center mt-14'>
+                    <div className='grid grid-cols-[1fr_auto_1fr] gap-6 items-center mt-14'>
 
-                        {/* LEFT: Before */}
-                        <div className='flex flex-col items-center gap-4 sm:flex-row sm:items-center'>
-                            {/* Sad dog SVG placeholder */}
-                            <div className='w-[140px] h-[140px] shrink-0 flex items-center justify-center'>
-                                <span className='text-gray-400 text-xs text-center font-[Spinnaker]'><img src={saddog} alt="" className="max-w-full h-auto" /></span>
-                            </div>
-                            <div className="min-w-0 text-center sm:text-left">
-                                <p className='font-[Spinnaker] text-xl text-gray-500 font-bold mb-4 whitespace-normal md:whitespace-nowrap'>You've probably noticed this...</p>
-                                <ul className='space-y-2 font-[Spinnaker] text-sm text-gray-500'>
-                                    <li>Tummy acting weird</li>
-                                    <li>Poop all over the place</li>
-                                    <li>Gassy after meals</li>
-                                    <li>Low energy days</li>
+                        {/* LEFT: Before (text only) */}
+                        <div className='flex items-center justify-center'>
+                            <div>
+                                <p className='font-[Spinnaker] text-xl text-gray-500 font-bold mb-4 text-nowrap'>You've probably noticed this...</p>
+                                <ul className='space-y-2 text-center font-[Spinnaker] text-sm text-gray-500'>
+                                    <div>Tummy acting weird</div>
+                                    <div>Poop all over the place</div>
+                                    <div>Gassy after meals</div>
+                                    <div>Low energy days</div>
                                 </ul>
                             </div>
                         </div>
@@ -113,35 +206,30 @@ const Review = () => {
                                 <span className='text-gray-400 text-xs text-center font-[Spinnaker] relative'><img src={stick1} alt="" className=''/>
                                 <img src={round} alt="" className='absolute top-13 left-0' /></span>
                             </div>
-                            <p className='font-[Cookie] text-lg text-[#4F815E] mt-2'>This is where it changes</p>
+                            <p className='font-[Cookie] text-[20px] text-[#4F815E] mt-2'>This is where it changes</p>
                         </div>
 
-                        {/* RIGHT: After */}
-                        <div className='flex flex-col items-center gap-4 sm:flex-row sm:items-center'>
-                            <div className="min-w-0 text-center sm:text-left">
-                                <p className='font-[Spinnaker] text-xl text-[#4F815E] font-bold mb-4'>This is how it should be.</p>
-                                <ul className='space-y-4 font-[Spinnaker] text-sm text-[#4F815E] font-semibold'>
-                                    <li>Smooth, easy digestion</li>
-                                    <li>Consistent, healthy poop</li>
-                                    <li>More energy, more play</li>
-                                    <li>Tail that won't stop wagging</li>
+                        {/* RIGHT: After (text only) */}
+                        <div className='flex items-center justify-center'>
+                            <div>
+                                <p className='font-[Spinnaker] text-xl text-nowrap text-[#4F815E] font-bold mb-4'>This is how it should be.</p>
+                                <ul className='space-y-4 font-[Spinnaker] text-center text-sm text-[#4F815E] font-semibold'>
+                                    <div>Smooth, easy digestion</div>
+                                    <div>Consistent, healthy poop</div>
+                                    <div>More energy, more play</div>
+                                    <div>Tail that won't stop wagging</div>
                                 </ul>
-                            </div>
-                            {/* Happy dog SVG placeholder */}
-                            <div className='w-[140px] h-[140px] shrink-0 flex items-center justify-center'>
-                                <span className='text-gray-400 text-xs text-center font-[Spinnaker]'><img src={happydog} alt="" className="max-w-full h-auto" /></span>
                             </div>
                         </div>
                     </div>
 
                     {/* Buy button */}
-                    <div className='flex justify-center mt-14'>
-                        <a
-                            href="#shop"
-                            className='inline-flex flex-row items-center gap-x-2 rounded-[10px] bg-[#4F815E] px-6 py-3 font-[Talina] text-[26px] font-light leading-[100%] tracking-0% text-white no-underline'
-                        >
-                            Buy chewcheer
-                            <ArrowRight strokeWidth={2.5} aria-hidden />
+                    <div className='flex justify-center mt-30 '>
+                        <a href="#shop">
+                            <button className='flex flex-row items-center gap-x-2 font-[Talina] bg-[#4F815E] text-[26px] text-white px-6 py-3 rounded-[10px] leading-[100%] tracking-0% font-light cursor-pointer'>
+                                Buy chewcheer
+                                <ArrowRight strokeWidth={2.5} />
+                            </button>
                         </a>
                     </div>
                 </div>

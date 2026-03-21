@@ -1,8 +1,8 @@
 import logo from '../../assets/Group 7.svg'
 const Header = () => {
   return (
-    <div className='fixed top-0 font-[Spinnaker] left-0 w-full z-50 min-w-0 bg-[#4F815E]/80 px-3 py-3 sm:px-6'>
-      <div className='mx-auto flex max-w-[100%] flex-wrap items-center md:flex-nowrap md:justify-between md:gap-4'>
+    <div className='font-[Spinnaker] left-0 w-full min-w-0 bg-[#4F815E]/80 px-3 py-3 sm:px-6'>
+      <div className='mx-auto flex max-w-full flex-wrap items-center md:flex-nowrap md:justify-between md:gap-4'>
         <div className="shrink-0">
           <img src={logo} alt="logo" className="h-auto max-h-12 w-auto shrink-0 object-contain sm:max-h-14 md:max-h-none" />
         </div>

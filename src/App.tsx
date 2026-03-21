@@ -1,12 +1,13 @@
 
 import Header from './components/layout/Header.tsx'
+import Countdown from './components/layout/Countdown.tsx'
 import Hero from './components/section/Hero.tsx'
 import ProductSection from './components/section/ProductSection.tsx'
 import MiloChat from './components/section/MiloChat.tsx'
 import Review from './components/section/Review.tsx'
 const App = () => {
   return (
-    <div className='relative min-w-0 overflow-x-hidden'>
+    <div className='relative min-w-0 overflow-x-clip'>
       <div className='absolute top-0 left-0 w-full -z-10 min-w-0'>
         <svg
           className="block h-auto w-full min-w-0"
@@ -46,17 +47,20 @@ const App = () => {
           </defs>
         </svg>
       </div>
-      <div className="min-w-0">
+      <div className='sticky top-0 z-50'>
+        <Countdown />
         <Header />
-        <div className='pt-20'>
+      </div>
+      <div>
+        <div>
           <Hero />
         </div>
         <div>
           <ProductSection />
         </div>
-        <Review/>
+        <Review />
         <div className='p-5'>
-          
+
         </div>
         <MiloChat />
       </div>
